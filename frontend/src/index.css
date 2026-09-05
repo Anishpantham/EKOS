@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Color: ink-navy ground, warm paper surfaces, semantic ledger-stamp accents */
+  --color-ink: #14181f;
+  --color-ink-soft: #191e26;
+  --color-surface: #1b212b;
+  --color-surface-raised: #232a36;
+  --color-border: #2c3441;
+  --color-border-soft: #232a36;
+  --color-paper: #ece7da;
+  --color-paper-dim: #c9c3b3;
+  --color-muted: #7c8494;
+  --color-muted-soft: #565e6d;
+
+  --color-verified: #3f7d5c;
+  --color-verified-soft: #274a37;
+  --color-verified-paper: #bfe2ce;
+
+  --color-conflict: #b5533c;
+  --color-conflict-soft: #4a2b22;
+  --color-conflict-paper: #f0c9bd;
+
+  --color-outdated: #c99a3e;
+  --color-outdated-soft: #4a3c20;
+  --color-outdated-paper: #f0deb2;
+
+  --color-info: #4a7ba6;
+  --color-info-soft: #223649;
+
+  --font-display: "IBM Plex Serif", Georgia, serif;
+  --font-sans: "IBM Plex Sans", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-verified-soft);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-verified);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+    border: 1px solid currentColor;
+    line-height: 1.6;
+  }
+
+  .authority-ladder {
+    display: inline-flex;
+    gap: 3px;
+    align-items: center;
+  }
+
+  .authority-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+}
