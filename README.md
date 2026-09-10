@@ -1,7 +1,7 @@
 # EKOS — Enterprise Knowledge Operating System
 
 An IR-first enterprise knowledge discovery and integrity platform.
-Course project (IR), submission deadline **September 1, 2026**.
+
 
 See `docs/architecture.md` for the full design rationale and phase plan.
 
