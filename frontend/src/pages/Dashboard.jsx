@@ -6,7 +6,7 @@ import ConflictCard from '../components/ConflictCard'
 
 function StatBlock({ label, value, accent }) {
   return (
-    <div className="border border-border-soft rounded-md px-4 py-3">
+    <div className="data-surface border border-border-soft rounded-lg px-4 py-3">
       <p className="text-[11px] font-mono uppercase tracking-wider text-muted">{label}</p>
       <p
         className="font-display text-3xl mt-1"
@@ -62,18 +62,18 @@ export default function Dashboard() {
   const scoreKnown = metrics.knowledge_integrity_score !== null
 
   return (
-    <div className="px-4 sm:px-8 py-6 sm:py-8 max-w-5xl">
+    <div className="px-4 sm:px-10 py-7 sm:py-10 max-w-6xl">
       <header className="mb-8">
         <p className="text-[11px] font-mono uppercase tracking-wider text-muted mb-2">
           Knowledge governance overview
         </p>
-        <h1 className="font-display text-3xl text-paper">Dashboard</h1>
+        <h1 className="page-heading font-display text-4xl text-paper">Dashboard</h1>
       </header>
 
       {/* Hero: integrity score */}
-      <div className="border border-border-soft rounded-lg px-6 py-6 mb-8 flex items-center gap-6 flex-wrap">
+      <div className="data-surface border border-border-soft rounded-xl px-6 py-6 mb-8 flex items-center gap-6 flex-wrap">
         <div
-          className="w-24 h-24 rounded-full border-4 flex items-center justify-center shrink-0"
+          className="w-24 h-24 rounded-full border-4 flex items-center justify-center shrink-0 bg-verified-soft"
           style={{
             borderColor: scoreKnown ? 'var(--color-verified)' : 'var(--color-border)',
           }}

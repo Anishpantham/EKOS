@@ -45,7 +45,7 @@ function normalizeCases({ contradictions, definitions, duplicates, outdated }) {
 function DuplicateCase({ c }) {
   const dup = c.raw
   return (
-    <div className="rounded-lg border border-border bg-surface p-5">
+    <div className="data-surface rounded-xl border border-border p-5 shadow-sm">
       <CaseHeader caseId={c.caseId} label={TYPE_META.duplicate.label} title={c.title} severity={c.severity} />
       <div className="flex items-center justify-between mb-3 text-[12px] font-mono text-muted">
         <span>similarity {dup.similarity_score.toFixed(3)}</span>
@@ -68,7 +68,7 @@ function DuplicateCase({ c }) {
 function OutdatedCase({ c }) {
   const o = c.raw
   return (
-    <div className="rounded-lg border border-border bg-surface p-5">
+    <div className="data-surface rounded-xl border border-border p-5 shadow-sm">
       <CaseHeader caseId={c.caseId} label={TYPE_META.outdated.label} title={c.title} severity={c.severity} />
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <div className="rounded-md border p-4" style={{ borderColor: 'var(--color-outdated)', backgroundColor: 'var(--color-outdated-soft)' }}>
@@ -173,12 +173,12 @@ export default function IntegrityCenter() {
   const unresolvedCount = cases.filter((c) => c.type === 'definition' && !c.raw.resolved_doc_key).length
 
   return (
-    <div className="px-4 sm:px-8 py-6 sm:py-8 max-w-4xl">
+    <div className="px-4 sm:px-10 py-7 sm:py-10 max-w-5xl">
       <header className="mb-6">
         <p className="text-[11px] font-mono uppercase tracking-wider text-muted mb-2">
           Knowledge integrity engine
         </p>
-        <h1 className="font-display text-3xl text-paper mb-2">Integrity Center</h1>
+        <h1 className="page-heading font-display text-4xl text-paper mb-2">Integrity Center</h1>
         <p className="text-[14px] text-muted max-w-2xl">
           Every open case below is a real, detected disagreement in the organization's
           documented knowledge — not a simulated example. Each case shows its evidence,

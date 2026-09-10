@@ -124,12 +124,12 @@ export default function KnowledgeGraph() {
     : []
 
   return (
-    <div className="px-4 sm:px-8 py-6 sm:py-8">
+    <div className="px-4 sm:px-10 py-7 sm:py-10">
       <header className="mb-6">
         <p className="text-[11px] font-mono uppercase tracking-wider text-muted mb-2">
           Entity relationships
         </p>
-        <h1 className="font-display text-3xl text-paper">Knowledge Graph</h1>
+        <h1 className="page-heading font-display text-4xl text-paper">Knowledge Graph</h1>
       </header>
 
       <div className="flex items-center gap-3 mb-6 flex-wrap">
@@ -139,18 +139,18 @@ export default function KnowledgeGraph() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="e.g. hr-remote-work-policy-v4"
-            className="bg-surface border border-border rounded-md px-3 py-1.5 text-[13px] text-paper placeholder:text-muted-soft font-mono outline-none focus:border-verified w-72"
+            className="bg-surface border border-border rounded-lg px-3 py-2 text-[13px] text-paper placeholder:text-muted-soft font-mono outline-none focus:border-verified w-72 shadow-sm"
           />
           <button
             type="submit"
-            className="px-3 py-1.5 rounded-md border border-border text-[13px] font-mono text-paper hover:border-verified"
+            className="px-3 py-2 rounded-lg border border-border bg-surface text-[13px] font-mono text-paper hover:border-verified shadow-sm"
           >
             Explore
           </button>
         </form>
         <button
           onClick={loadFullGraph}
-          className="px-3 py-1.5 rounded-md border border-border-soft text-[13px] font-mono text-muted hover:text-paper"
+          className="px-3 py-2 rounded-lg border border-border-soft bg-surface text-[13px] font-mono text-muted hover:text-paper shadow-sm"
         >
           Show full graph
         </button>
@@ -168,7 +168,7 @@ export default function KnowledgeGraph() {
 
       {!loading && !error && laid && laid.nodes.length > 0 && (
         <div className="flex gap-6 flex-wrap lg:flex-nowrap">
-          <div className="border border-border-soft rounded-md overflow-x-auto shrink-0 max-w-full">
+          <div className="data-surface border border-border-soft rounded-xl overflow-x-auto shrink-0 max-w-full shadow-sm">
             <svg width={WIDTH} height={HEIGHT}>
               <g>
                 {laid.links.map((l, i) => {

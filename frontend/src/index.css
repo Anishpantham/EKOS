@@ -1,42 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* Color: ink-navy ground, warm paper surfaces, semantic ledger-stamp accents */
-  --color-ink: #14181f;
-  --color-ink-soft: #191e26;
-  --color-surface: #1b212b;
-  --color-surface-raised: #232a36;
-  --color-border: #2c3441;
-  --color-border-soft: #232a36;
-  --color-paper: #ece7da;
-  --color-paper-dim: #c9c3b3;
-  --color-muted: #7c8494;
-  --color-muted-soft: #565e6d;
+  --color-ink: #f5f7f8;
+  --color-ink-soft: #edf1f2;
+  --color-surface: #ffffff;
+  --color-surface-raised: #eef3f3;
+  --color-border: #cbd6d8;
+  --color-border-soft: #e1e8e9;
+  --color-paper: #17262d;
+  --color-paper-dim: #40545b;
+  --color-muted: #6d7d82;
+  --color-muted-soft: #96a4a8;
 
-  --color-verified: #3f7d5c;
-  --color-verified-soft: #274a37;
-  --color-verified-paper: #bfe2ce;
+  --color-verified: #117a6b;
+  --color-verified-soft: #dff1ed;
+  --color-verified-paper: #0d6559;
 
-  --color-conflict: #b5533c;
-  --color-conflict-soft: #4a2b22;
-  --color-conflict-paper: #f0c9bd;
+  --color-conflict: #bd4e43;
+  --color-conflict-soft: #fae9e7;
+  --color-conflict-paper: #9d3931;
 
-  --color-outdated: #c99a3e;
-  --color-outdated-soft: #4a3c20;
-  --color-outdated-paper: #f0deb2;
+  --color-outdated: #b47a22;
+  --color-outdated-soft: #fff2d8;
+  --color-outdated-paper: #8a5d14;
 
-  --color-info: #4a7ba6;
-  --color-info-soft: #223649;
+  --color-info: #34729b;
+  --color-info-soft: #e4f0f7;
 
-  --font-display: "IBM Plex Serif", Georgia, serif;
-  --font-sans: "IBM Plex Sans", -apple-system, sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", "SF Mono", monospace;
 }
 
 @layer base {
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
@@ -44,11 +43,12 @@
     color: var(--color-paper);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    background-image: linear-gradient(135deg, rgba(17, 122, 107, 0.035), transparent 32rem);
   }
 
   ::selection {
-    background-color: var(--color-verified-soft);
-    color: var(--color-paper);
+    background-color: #bfe4dd;
+    color: #102b2b;
   }
 
   :focus-visible {
@@ -78,9 +78,10 @@
     text-transform: uppercase;
     font-weight: 600;
     padding: 0.2em 0.6em;
-    border-radius: 3px;
+    border-radius: 999px;
     border: 1px solid currentColor;
     line-height: 1.6;
+    background: color-mix(in srgb, currentColor 8%, transparent);
   }
 
   .authority-ladder {
@@ -93,5 +94,45 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
+  }
+}
+
+@layer components {
+  .app-rail {
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 12px 0 32px rgba(23, 38, 45, 0.035);
+  }
+
+  .brand-mark {
+    width: 2.25rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.65rem;
+    background: var(--color-paper);
+    color: #bfe4dd;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: -0.08em;
+  }
+
+  .page-heading {
+    letter-spacing: -0.035em;
+    font-weight: 500;
+  }
+
+  .data-surface {
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 10px 28px rgba(23, 38, 45, 0.045);
+  }
+
+  button, input, select {
+    transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  }
+
+  input:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(17, 122, 107, 0.12);
   }
 }

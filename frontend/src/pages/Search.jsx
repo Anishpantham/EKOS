@@ -59,7 +59,7 @@ function ResultCard({ result }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <div className="border border-border-soft rounded-md p-4 hover:border-verified/50 transition-colors">
+    <div className="data-surface border border-border-soft rounded-lg p-5 hover:border-verified/50 transition-colors">
       <div className="flex items-start justify-between gap-3 mb-2">
         <Link to={`/documents/${result.document_id}`} className="min-w-0 group">
           <p className="font-display text-base text-paper truncate group-hover:text-verified transition-colors">
@@ -128,12 +128,12 @@ export default function Search() {
   }
 
   return (
-    <div className="px-4 sm:px-8 py-6 sm:py-8 max-w-3xl">
+    <div className="px-4 sm:px-10 py-7 sm:py-10 max-w-4xl">
       <header className="mb-6">
         <p className="text-[11px] font-mono uppercase tracking-wider text-muted mb-2">
           Enterprise search
         </p>
-        <h1 className="font-display text-3xl text-paper">Search</h1>
+        <h1 className="page-heading font-display text-4xl text-paper">Search</h1>
       </header>
 
       <form onSubmit={runSearch} className="mb-4">
@@ -145,11 +145,11 @@ export default function Search() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="What is the current remote work policy?"
           autoComplete="off"
-          className="w-full bg-surface border border-border rounded-md px-4 py-3 text-paper placeholder:text-muted-soft font-sans focus:border-verified outline-none"
+          className="w-full bg-surface border border-border rounded-lg px-4 py-3.5 text-paper placeholder:text-muted-soft font-sans focus:border-verified outline-none shadow-sm"
         />
       </form>
 
-      <div className="flex gap-1 mb-6 border border-border-soft rounded-md p-1 w-fit flex-wrap" role="radiogroup" aria-label="Retrieval method">
+      <div className="flex gap-1 mb-6 border border-border-soft bg-surface rounded-lg p-1 w-fit flex-wrap shadow-sm" role="radiogroup" aria-label="Retrieval method">
         {METHODS.map((m) => (
           <button
             key={m.value}

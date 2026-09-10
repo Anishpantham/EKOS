@@ -24,19 +24,19 @@ export default function Documents() {
   const departments = ['HR', 'IT-Security', 'Finance', 'Engineering', 'Projects']
 
   return (
-    <div className="px-4 sm:px-8 py-6 sm:py-8 max-w-4xl">
+    <div className="px-4 sm:px-10 py-7 sm:py-10 max-w-5xl">
       <header className="mb-6">
         <p className="text-[11px] font-mono uppercase tracking-wider text-muted mb-2">
           Document library
         </p>
-        <h1 className="font-display text-3xl text-paper">Documents</h1>
+        <h1 className="page-heading font-display text-4xl text-paper">Documents</h1>
       </header>
 
       <div className="flex gap-3 mb-6 flex-wrap">
         <select
           value={department}
           onChange={(e) => setDepartment(e.target.value)}
-          className="bg-surface border border-border rounded-md px-3 py-1.5 text-[13px] text-paper font-mono outline-none focus:border-verified"
+          className="bg-surface border border-border rounded-lg px-3 py-2 text-[13px] text-paper font-mono outline-none focus:border-verified shadow-sm"
         >
           <option value="">All departments</option>
           {departments.map((d) => (
@@ -47,7 +47,7 @@ export default function Documents() {
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="bg-surface border border-border rounded-md px-3 py-1.5 text-[13px] text-paper font-mono outline-none focus:border-verified"
+          className="bg-surface border border-border rounded-lg px-3 py-2 text-[13px] text-paper font-mono outline-none focus:border-verified shadow-sm"
         >
           <option value="">All statuses</option>
           <option value="current">Current</option>
@@ -63,7 +63,7 @@ export default function Documents() {
       )}
 
       {!loading && !error && documents.length > 0 && (
-        <div className="border border-border-soft rounded-md divide-y divide-border-soft overflow-hidden">
+        <div className="data-surface border border-border-soft rounded-xl divide-y divide-border-soft overflow-hidden shadow-sm">
           {documents.map((doc) => (
             <Link
               key={doc.id}

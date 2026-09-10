@@ -43,7 +43,7 @@ export default function DocumentDetail() {
   )
 
   return (
-    <div className="px-4 sm:px-8 py-6 sm:py-8 max-w-4xl">
+    <div className="px-4 sm:px-10 py-7 sm:py-10 max-w-5xl">
       <Link to="/documents" className="text-[13px] font-mono text-muted hover:text-paper">
         ← Documents
       </Link>
@@ -53,7 +53,7 @@ export default function DocumentDetail() {
           <p className="text-[11px] font-mono uppercase tracking-wider text-muted mb-2">
             {doc.department} · {doc.doc_type}
           </p>
-          <h1 className="font-display text-3xl text-paper">{doc.title}</h1>
+          <h1 className="page-heading font-display text-4xl text-paper">{doc.title}</h1>
           <p className="font-mono text-[12px] text-muted mt-2">{doc.doc_key}</p>
         </div>
         <div className="flex items-center gap-3">
@@ -65,7 +65,7 @@ export default function DocumentDetail() {
       <div className="grid md:grid-cols-3 gap-8">
         <div className="md:col-span-2">
           <h2 className="font-display text-lg text-paper mb-3">Content</h2>
-          <div className="border border-border-soft rounded-md p-5 space-y-4">
+          <div className="data-surface border border-border-soft rounded-xl p-5 space-y-4 shadow-sm">
             {doc.chunks.map((c) => (
               <p key={c.id} className="text-[14px] text-paper-dim leading-relaxed whitespace-pre-wrap">
                 {c.chunk_text}
@@ -76,7 +76,7 @@ export default function DocumentDetail() {
 
         <aside>
           <h2 className="font-display text-lg text-paper mb-3">Metadata</h2>
-          <div className="border border-border-soft rounded-md px-4 py-2">
+          <div className="data-surface border border-border-soft rounded-xl px-4 py-2 shadow-sm">
             <MetaRow label="Version" value={doc.version} />
             <MetaRow label="Owner" value={doc.owner} />
             <MetaRow label="Author" value={doc.author} />

@@ -18,7 +18,7 @@ export function ErrorState({ message, hint }) {
 
 export function EmptyState({ title, body }) {
   return (
-    <div className="border border-dashed border-border rounded-md px-6 py-10 text-center">
+    <div className="data-surface border border-dashed border-border rounded-xl px-6 py-12 text-center">
       <p className="font-display text-lg text-paper">{title}</p>
       {body && <p className="text-muted text-sm mt-2 max-w-md mx-auto">{body}</p>}
     </div>

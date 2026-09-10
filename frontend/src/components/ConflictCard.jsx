@@ -37,7 +37,7 @@ export default function ConflictCard({ conflict, caseId, detectionMethod }) {
   const showValue = conflict.conflict_type === 'contradiction'
 
   return (
-    <div className="rounded-lg border border-border bg-surface p-5">
+    <div className="data-surface rounded-xl border border-border p-5 shadow-sm">
       <div className="flex items-center justify-between mb-4 gap-3 flex-wrap">
         <div>
           <p className="text-[11px] font-mono uppercase tracking-wider text-muted mb-1">
