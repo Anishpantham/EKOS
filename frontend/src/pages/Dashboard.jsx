@@ -73,12 +73,10 @@ export default function Dashboard() {
       {/* Hero: integrity score */}
       <div className="data-surface border border-border-soft rounded-xl px-6 py-6 mb-8 flex items-center gap-6 flex-wrap">
         <div
-          className="w-24 h-24 rounded-full border-4 flex items-center justify-center shrink-0 bg-verified-soft"
-          style={{
-            borderColor: scoreKnown ? 'var(--color-verified)' : 'var(--color-border)',
-          }}
+          className="score-ring w-24 h-24 rounded-full flex items-center justify-center shrink-0"
+          style={{ '--score': scoreKnown ? `${metrics.knowledge_integrity_score}%` : '0%' }}
         >
-          <span className="font-display text-2xl text-paper">
+          <span className="relative z-10 font-display text-2xl text-paper">
             {scoreKnown ? `${metrics.knowledge_integrity_score}%` : '—'}
           </span>
         </div>

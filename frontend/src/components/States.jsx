@@ -1,8 +1,18 @@
 export function Loading({ label = 'Loading' }) {
   return (
-    <div className="flex items-center gap-3 text-muted font-mono text-sm py-12 justify-center">
-      <span className="inline-block w-2 h-2 rounded-full bg-verified animate-pulse" />
-      {label}…
+    <div className="space-y-3 py-5" aria-live="polite" aria-label={label}>
+      <div className="flex items-center gap-2 mb-5">
+        <span className="inline-block w-2 h-2 rounded-full bg-info animate-pulse" />
+        <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted">{label}</span>
+      </div>
+      {[1, 2, 3].map((item) => (
+        <div key={item} className="data-surface border border-border-soft rounded-xl p-5 space-y-3">
+          <div className="skeleton-line h-4 rounded w-2/5" />
+          <div className="skeleton-line h-3 rounded w-1/4" />
+          <div className="skeleton-line h-3 rounded w-full" />
+          <div className="skeleton-line h-3 rounded w-4/5" />
+        </div>
+      ))}
     </div>
   )
 }

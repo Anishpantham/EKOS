@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
 const NAV_ITEMS = [
   { to: '/', label: 'Dashboard', end: true },
@@ -59,9 +59,10 @@ function SidebarContent({ onNavigate }) {
 
 export default function Layout() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
 
   return (
-    <div className="min-h-screen flex bg-ink">
+    <div className="app-shell min-h-screen flex bg-ink">
       {/* Desktop rail */}
       <aside className="app-rail hidden md:flex w-60 shrink-0 border-r border-border-soft flex-col">
         <SidebarContent />
@@ -95,7 +96,9 @@ export default function Layout() {
       )}
 
       <main className="flex-1 min-w-0 pt-14 md:pt-0">
-        <Outlet />
+        <div key={location.pathname} className="page-transition">
+          <Outlet />
+        </div>
       </main>
     </div>
   )
